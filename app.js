@@ -27,6 +27,8 @@
   // The export endpoint keeps the sheet's layout (context rows, then the header row).
   // The gviz endpoint merges the context rows into the header, so it is not used.
   CONFIG.csvUrl = `https://docs.google.com/spreadsheets/d/${CONFIG.sheetId}/export?format=csv&gid=${CONFIG.gid}`;
+  // Used only by the snapshot script, to read cell hyperlinks (the CSV export has none).
+  CONFIG.xlsxUrl = `https://docs.google.com/spreadsheets/d/${CONFIG.sheetId}/export?format=xlsx&gid=${CONFIG.gid}`;
 
   const LEAD = 'A curated list of peer-reviewed journals in media and communication research ' +
     'that support open science. Compare full open access, article processing charges (APC), ' +
@@ -77,11 +79,15 @@
     return rows;
   }
 
+  function cleanCell(text) {
+    return text.replace(/\s+/g, ' ').trim();
+  }
+
   // Turns the sheet's rows into { title, credit, lastUpdate, criteria, contribute, notes,
   // columns, rows }. The header row is the one containing a "Journal" cell; everything
   // above it is page context. Returns null if no header row is found.
   function parseSheet(rawRows) {
-    const rows = rawRows.map((r) => r.map((c) => c.replace(/\s+/g, ' ').trim()));
+    const rows = rawRows.map((r) => r.map(cleanCell));
     const headerIndex = rows.findIndex((r) => r.some((c) => NAME_COLUMN.test(c)));
     if (headerIndex < 0) return null;
 
@@ -174,7 +180,9 @@
       let id = 'journal-' + (slugify(values[name.index]) || 'unnamed');
       for (let n = 2; seen.has(id); n++) id = id.replace(/-\d+$/, '') + '-' + n;
       seen.add(id);
-      return { id, values, search: normalize(values.join(' ')) };
+      // Hyperlinks from the sheet, by column name (added by the snapshot script).
+      const links = (data.links && data.links[values[name.index]]) || {};
+      return { id, values, links, search: normalize(values.join(' ')) };
     });
 
     return {
@@ -320,6 +328,7 @@
       const name = j.values[model.name.index];
       const subtitle = model.subtitle && j.values[model.subtitle.index];
       const details = model.detailCols.filter((c) => j.values[c.index]);
+      const website = safeUrl(j.links[model.name.name] || '');
       return [
         h('tr', { id: j.id, class: 'journal' },
           h('th', { scope: 'row', class: 'col-name' },
@@ -328,7 +337,9 @@
             h('span', { class: 'row-actions' },
               h('button', { type: 'button', class: 'toggle', 'aria-expanded': String(open), 'aria-controls': j.id + '-details', 'data-toggle': j.id },
                 open ? 'Hide details' : 'Details'),
-              h('a', { class: 'permalink', href: '#' + j.id }, 'Link', h('span', { class: 'sr-only' }, ' to ' + name)))),
+              website && h('a', { class: 'website', href: website, target: '_blank', rel: 'noopener' },
+                'Website', h('span', { class: 'sr-only' }, ' of ' + name + ' (opens in a new tab)'),
+                h('span', { 'aria-hidden': 'true' }, ' ↗')))),
           model.tableCols.map((c) => h('td', {
             class: 'col-' + c.kind + (groupStarts.has(c) ? ' group-start' : ''),
             'data-label': c.name,
@@ -337,7 +348,8 @@
           h('td', { colspan: columnCount },
             h('dl', null, details.map((c) => h('div', { class: 'detail' },
               h('dt', null, c.name),
-              h('dd', null, renderText(j.values[c.index]))))))),
+              h('dd', null, renderText(j.values[c.index]))))),
+            h('p', { class: 'entry-link' }, h('a', { href: '#' + j.id }, 'Link to this entry')))),
       ];
     });
   }
@@ -519,6 +531,7 @@
         if (!response.ok) throw new Error('HTTP ' + response.status);
         const live = parseSheet(parseCSV(await response.text()));
         if (!live) throw new Error('No header row found');
+        live.links = data ? data.links : undefined; // the CSV has no hyperlinks; keep the snapshot's
         const time = new Date().toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
         const content = (d) => JSON.stringify([d.title, d.credit, d.lastUpdate, d.criteria, d.contribute, d.notes, d.columns, d.rows]);
         const changed = !data || content(data) !== content(live);
@@ -608,7 +621,7 @@
   }
 
   if (typeof module === 'object' && module.exports) {
-    module.exports = { CONFIG, LEAD, parseCSV, parseSheet, buildMain, toHTML };
+    module.exports = { CONFIG, LEAD, cleanCell, parseCSV, parseSheet, buildMain, toHTML, safeUrl };
   } else if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initBrowser);
   } else {

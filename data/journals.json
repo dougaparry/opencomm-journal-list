@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-21T08:37:27.164Z",
+  "fetchedAt": "2026-10-21T09:22:05.718Z",
   "title": "Open Media and Communication Research #opencomm – Journal List",
   "credit": "Created by Moritz Büchi, Michael Reiss, and Tobias Dienlin",
   "lastUpdate": "Last update 04/2026, inclusion of journals \"Platforms & Society\", \"Contratexto\", \"Creator and Influencer Studies\", \"Palabra Clave\", \"JMIR Infodemiology\", and \"Journal of Medical Internet Research\"",
@@ -1824,5 +1824,344 @@
       "",
       ""
     ]
-  ]
+  ],
+  "links": {
+    "Annals of the International Communication Association": {
+      "Journal": "https://academic.oup.com/anncom",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21100916904",
+      "Notes on fee (APC)": "https://academic.oup.com/pages/open-research/read-and-publish-agreements"
+    },
+    "Big Data & Society": {
+      "Journal": "https://journals.sagepub.com/home/bds",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21100933954",
+      "Notes on fee (APC)": "https://www.sagepub.com/journals/information-for-authors/publishing-options/gold-open-access-article-processing-charge-waivers"
+    },
+    "Church, Communication and Culture": {
+      "Journal": "https://www.tandfonline.com/journals/rchu20",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21100917116",
+      "Notes on fee (APC)": "https://authorservices.taylorandfrancis.com/choose-open/publishing-open-access/requesting-an-apc-waiver/"
+    },
+    "Collabra: Psychology": {
+      "Journal": "https://www.collabra.org/",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21100857520",
+      "Notes on fee (APC)": "https://online.ucpress.edu/collabra/pages/publicationfees"
+    },
+    "Communication & Society": {
+      "Journal": "https://revistas.unav.edu/index.php/communication-and-society/index",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/5700164098"
+    },
+    "Communication and the Public": {
+      "Journal": "https://journals.sagepub.com/home/CTP",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21100911066"
+    },
+    "Communication Research Reports": {
+      "Journal": "https://www.tandfonline.com/journals/rcrr20",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/5700155425",
+      "Notes on fee (APC)": "https://authorservices.taylorandfrancis.com/choose-open/publishing-open-access/oa-agreements/"
+    },
+    "Communication Studies": {
+      "Journal": "https://www.tandfonline.com/journals/rcst20",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/5600153399",
+      "Notes on fee (APC)": "https://authorservices.taylorandfrancis.com/choose-open/publishing-open-access/oa-agreements/"
+    },
+    "Computational Communication Research": {
+      "Journal": "https://computationalcommunication.org/ccr/openaccess",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21101152530"
+    },
+    "Computers in Human Behavior Reports": {
+      "Journal": "https://www.sciencedirect.com/journal/computers-in-human-behavior-reports",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21101078838",
+      "Notes on fee (APC)": "https://www.elsevier.com/researcher/author/open-access/choice"
+    },
+    "Contratexto": {
+      "Journal": "https://revistas.ulima.edu.pe/index.php/contratexto/index",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21101044933"
+    },
+    "Creator and Influencer Studies": {
+      "Journal": "https://link.springer.com/journal/44538",
+      "Notes on fee (APC)": "https://www.springernature.com/gp/open-science/policies/journal-policies/apc-waiver-countries"
+    },
+    "Cuadernos.info": {
+      "Journal": "http://cuadernos.info/",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21100264483"
+    },
+    "Cyberpsychology: Journal of Psychosocial Research on Cyberspace": {
+      "Journal": "https://cyberpsychology.eu/",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/19900192615"
+    },
+    "Digital Humanities Quarterly": {
+      "Journal": "https://dhq.digitalhumanities.org/",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21100898016"
+    },
+    "Emerging Media": {
+      "Journal": "https://journals.sagepub.com/home/EMM"
+    },
+    "European Journal of Health Communication": {
+      "Journal": "https://ejhc.org/",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21101288814"
+    },
+    "Frontiers in Communication": {
+      "Journal": "https://www.frontiersin.org/journals/communication",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21101061926",
+      "General Notes": "https://en.wikipedia.org/wiki/Frontiers_Media",
+      "Notes on fee (APC)": "https://www.frontiersin.org/journals/communication/for-authors/publishing-fees"
+    },
+    "Global Media and China": {
+      "Journal": "https://journals.sagepub.com/home/gch",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21101005180"
+    },
+    "Global Perspectives in Communication": {
+      "Journal": "https://academic.oup.com/gpc",
+      "Notes on fee (APC)": "https://academic.oup.com/pages/open-research/open-access/charges-licences-and-self-archiving/apc-waiver-policy"
+    },
+    "History of Media Studies": {
+      "Journal": "https://hms.mediastudies.press/about"
+    },
+    "HKS Misinformation Review": {
+      "Journal": "https://misinforeview.hks.harvard.edu/",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21101158576"
+    },
+    "Human Communication Research": {
+      "Journal": "https://academic.oup.com/hcr",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/14772",
+      "Notes on fee (APC)": "https://academic.oup.com/pages/open-research/read-and-publish-agreements"
+    },
+    "Human-Machine Communication": {
+      "Journal": "https://stars.library.ucf.edu/hmc/",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21101134668"
+    },
+    "Humanities & Social Sciences Communications": {
+      "Journal": "https://www.nature.com/palcomms/",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21101018925",
+      "Notes on fee (APC)": "https://www.springernature.com/gp/open-science/policies/journal-policies/apc-waiver-countries"
+    },
+    "International Journal of Communication": {
+      "Journal": "https://ijoc.org/index.php/ijoc",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21100202907"
+    },
+    "Internet Policy Review": {
+      "Journal": "https://policyreview.info/",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21100898535"
+    },
+    "JMIR Infodemiology": {
+      "Journal": "https://infodemiology.jmir.org/",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21101129622",
+      "Notes on fee (APC)": "https://support.jmir.org/hc/en-us/articles/115001277847-Our-Publishing-Fees-Explained"
+    },
+    "Journal of Applied Communications": {
+      "Journal": "https://newprairiepress.org/jac/",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21101245229"
+    },
+    "Journal of Communication": {
+      "Journal": "https://academic.oup.com/joc",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/15613",
+      "Notes on fee (APC)": "https://academic.oup.com/pages/open-research/read-and-publish-agreements"
+    },
+    "Journal of Computer-Mediated Communication": {
+      "Journal": "https://academic.oup.com/jcmc",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/18232"
+    },
+    "Journal of Digital Social Research": {
+      "Journal": "https://www.jdsr.io/",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21101306748"
+    },
+    "Journal of Information Policy": {
+      "Journal": "https://www.psupress.org/Journals/jnls_JIP.html",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21100872049"
+    },
+    "Journal of Media Literacy Education": {
+      "Journal": "https://digitalcommons.uri.edu/jmle/",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21101045763"
+    },
+    "Journal of Media Psychology": {
+      "Journal": "https://www.hogrefe.com/us/journal/journal-of-media-psychology",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/17700156742",
+      "Notes on fee (APC)": "https://www.hogrefe.com/eu/service/for-journal-authors/openmind/support"
+    },
+    "Journal of Medical Internet Research": {
+      "Journal": "https://www.jmir.org/",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/23709",
+      "Notes on fee (APC)": "https://support.jmir.org/hc/en-us/articles/115001277847-Our-Publishing-Fees-Explained"
+    },
+    "Journal of Online Trust and Safety": {
+      "Journal": "https://tsjournal.org/index.php/jots/index"
+    },
+    "Journal of Public Interest Communications": {
+      "Journal": "https://journals.flvc.org/jpic/index",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21101176030"
+    },
+    "Journal of Quantitative Description: Digital Media": {
+      "Journal": "http://www.journalqd.org/"
+    },
+    "Journal of Science Communication (JCOM)": {
+      "Journal": "https://jcom.sissa.it/",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/17700156421"
+    },
+    "Journal of Social Computing": {
+      "Journal": "https://www.sciopen.com/journal/2688-5255",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21101101209"
+    },
+    "Journalism and Media": {
+      "Journal": "https://www.mdpi.com/journal/journalmedia",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21101172261",
+      "General Notes": "https://en.wikipedia.org/wiki/MDPI",
+      "Notes on fee (APC)": "https://www.mdpi.com/ioap"
+    },
+    "Media + Environment": {
+      "Journal": "https://mediaenviron.org/"
+    },
+    "Media and Communication": {
+      "Journal": "https://www.cogitatiopress.com/mediaandcommunication",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21100792085",
+      "Notes on fee (APC)": "https://www.cogitatiopress.com/mediaandcommunication/about/institutionalmembership"
+    },
+    "Media Industries": {
+      "Journal": "https://journals.publishing.umich.edu/mij/site/about/"
+    },
+    "Media Psychology": {
+      "Journal": "https://www.tandfonline.com/journals/hmep20",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/12057",
+      "Notes on fee (APC)": "https://authorservices.taylorandfrancis.com/choose-open/publishing-open-access/oa-agreements/"
+    },
+    "Media Theory": {
+      "Journal": "http://mediatheoryjournal.org/"
+    },
+    "MedieKultur: Journal of media and communication research": {
+      "Journal": "https://tidsskrift.dk/mediekultur/index",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21101046763"
+    },
+    "Medien und Kommunikations- wissenschaft (M&K)": {
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21101021173"
+    },
+    "Meta Psychology": {
+      "Journal": "https://open.lnu.se/index.php/metapsychology/index"
+    },
+    "Nature Human Behavior": {
+      "Journal": "https://www.nature.com/nathumbehav/",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21100838541",
+      "Notes on fee (APC)": "https://www.nature.com/nathumbehav/open-access-funding"
+    },
+    "Nordic Journal of Media Studies": {
+      "Journal": "https://reference-global.com/journal/NJMS",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21101227929"
+    },
+    "Nordicom Review": {
+      "Journal": "https://www.nordicom.gu.se/en/publications/nordicom-review",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/5700155017"
+    },
+    "Online Media and Global Communication": {
+      "Journal": "https://www.degruyterbrill.com/journal/key/omgc/html",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21101287870"
+    },
+    "Palabra Clave": {
+      "Journal": "https://palabraclave.unisabana.edu.co/index.php/palabraclave/index",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21100215170"
+    },
+    "Platforms & Society": {
+      "Journal": "https://journals.sagepub.com/home/PNS",
+      "Notes on fee (APC)": "https://www.sagepub.com/journals/information-for-authors/publishing-options/gold-open-access-article-processing-charge-waivers"
+    },
+    "PLOS ONE": {
+      "Journal": "https://journals.plos.org/plosone/",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/10600153309",
+      "Notes on fee (APC)": "https://plos.org/fees/"
+    },
+    "Political Communication": {
+      "Journal": "https://www.tandfonline.com/journals/upcp20",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/22838",
+      "General Notes": "https://www.tandfonline.com/action/authorSubmission?show=instructions&journalCode=upcp20",
+      "Notes on fee (APC)": "https://authorservices.taylorandfrancis.com/choose-open/publishing-open-access/oa-agreements/"
+    },
+    "Psychology of Language and Communication": {
+      "Journal": "https://reference-global.com/journal/PLC",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/18300156724"
+    },
+    "Qualitative Health Communication": {
+      "Journal": "https://tidsskrift.dk/qhc/index"
+    },
+    "Review of Communication Research": {
+      "Journal": "https://rcommunicationr.org/",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21100870684",
+      "Notes on fee (APC)": "https://rcommunicationr.org/index.php/rcr/submit/production-charges"
+    },
+    "Royal Society Open Science": {
+      "Journal": "https://royalsocietypublishing.org/journal/rsos",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21100446014",
+      "Notes on fee (APC)": "https://royalsociety.org/journals/open-access/read-publish-agreements/"
+    },
+    "Sage Open": {
+      "Journal": "https://journals.sagepub.com/home/sgo",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21100255401",
+      "Notes on fee (APC)": "https://www.sagepub.com/journals/information-for-authors/publishing-options/gold-open-access-article-processing-charge-waivers"
+    },
+    "Science Advances": {
+      "Journal": "https://advances.sciencemag.org/",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21100457028",
+      "General Notes": "https://www.science.org/content/page/science-journals-editorial-policies",
+      "Notes on fee (APC)": "https://www.science.org/content/page/science-advances-licensing-and-charges"
+    },
+    "Scientific Reports": {
+      "Journal": "https://www.nature.com/srep/",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21100200805",
+      "Notes on fee (APC)": "https://www.springernature.com/gp/open-science/policies/journal-policies/apc-waiver-countries"
+    },
+    "Social Media + Society": {
+      "Journal": "https://journals.sagepub.com/home/sms",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21100837352",
+      "Notes on fee (APC)": "https://www.sagepub.com/journals/information-for-authors/publishing-options/gold-open-access-article-processing-charge-waivers"
+    },
+    "Social Sciences & Humanities Open": {
+      "Journal": "https://www.sciencedirect.com/journal/social-sciences-and-humanities-open",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21101142603",
+      "Notes on fee (APC)": "https://www.sciencedirect.com/journal/telematics-and-informatics-reports/publish/open-access-options"
+    },
+    "Socius: Sociological Research for a Dynamic World": {
+      "Journal": "https://journals.sagepub.com/home/srd",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21101021489",
+      "Notes on fee (APC)": "https://www.sagepub.com/journals/information-for-authors/publishing-options/gold-open-access-article-processing-charge-waivers"
+    },
+    "Studies in Communication and Media": {
+      "Journal": "https://www.nomos.de/en/journals/scm/",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21101043318"
+    },
+    "Studies in Communication Sciences": {
+      "Journal": "https://www.hope.uzh.ch/scoms",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21100228131"
+    },
+    "Studies in Media and Communication": {
+      "Journal": "https://redfame.com/journal/index.php/smc",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21101062494",
+      "Notes on fee (APC)": "https://redfame.com/journal/index.php/smc/about/submissions"
+    },
+    "Surveillance & Society": {
+      "Journal": "https://ojs.library.queensu.ca/index.php/surveillance-and-society/index",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/20600195509"
+    },
+    "Technology, Mind, and Behavior": {
+      "Journal": "https://www.apa.org/pubs/journals/tmb",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21101185419",
+      "Notes on fee (APC)": "https://www.apa.org/pubs/journals/tmb?tab=1"
+    },
+    "Telematics and Informatics Reports": {
+      "Journal": "https://www.sciencedirect.com/journal/telematics-and-informatics-reports",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21101165606",
+      "Notes on fee (APC)": "https://www.sciencedirect.com/journal/telematics-and-informatics-reports/publish/open-access-options"
+    },
+    "The International Journal of Press/Politics": {
+      "Journal": "https://journals.sagepub.com/home/HIJ",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/10300153306",
+      "Notes on fee (APC)": "https://www.sagepub.com/journals/information-for-authors/publishing-options/open-access-agreements"
+    },
+    "tripleC: Communication, Capitalism & Critique": {
+      "Journal": "https://www.triple-c.at/index.php/tripleC",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/19700183008"
+    },
+    "Tripodos": {
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21100882128"
+    },
+    "Weizenbaum Journal of the Digital Society": {
+      "Journal": "https://ojs.weizenbaum-institut.de/index.php/wjds/index",
+      "Scopus 2024 Percentile": "https://www.scopus.com/sourceid/21101312190"
+    }
+  }
 }

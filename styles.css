@@ -475,7 +475,12 @@ tbody .col-name {
   color: var(--white);
 }
 
-.permalink {
+.website {
+  font-size: 0.8125rem;
+}
+
+.entry-link {
+  margin: 0.75rem 0 0;
   font-size: 0.8125rem;
 }
 
