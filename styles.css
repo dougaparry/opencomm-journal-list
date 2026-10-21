@@ -146,6 +146,10 @@ a:hover {
   margin: 0 0 1.5rem;
 }
 
+.legend p {
+  margin: 0;
+}
+
 .mark {
   white-space: nowrap;
 }
@@ -181,9 +185,12 @@ a:hover {
   font-weight: bold;
 }
 
+.control-search {
+  flex: 1 1 22rem;
+}
+
 .control-search input {
   width: 100%;
-  max-width: 36rem;
   padding: 0.6rem 0.75rem;
   border: 1px solid var(--black);
   border-radius: 0;
@@ -239,7 +246,13 @@ input[type="checkbox"] {
   flex-wrap: wrap;
   gap: 1rem 1.5rem;
   align-items: flex-end;
-  margin-top: 1.25rem;
+}
+
+/* Search box, selects and button share one height so they line up. */
+.control-row input,
+.control-row select,
+.control-row .button {
+  height: 2.75rem;
 }
 
 .select {

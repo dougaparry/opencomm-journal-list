@@ -8,4 +8,4 @@ The list is created and maintained by Moritz Büchi, Michael Reiss, and Tobias D
 
 To suggest a journal or report outdated information, comment on the sheet or request edit access there.
 
-The website is built by [Douglas Parry](https://dougaparry.com/) as an independent project and is not directly affiliated with the list's authors.
+The website is built by [Douglas Parry](https://dougaparry.com/) as an independent project and is not directly affiliated with the list’s authors.

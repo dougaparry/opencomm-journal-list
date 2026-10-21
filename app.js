@@ -240,10 +240,22 @@
     return new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
   }
 
+  // Typographic quotes for displaying sheet text: "x" -> “x”, 'x' -> ‘x’, it's -> it’s.
+  function smartQuotes(text) {
+    return text
+      .replace(/(^|[\s([{\u2013\u2014-])"/g, '$1\u201C').replace(/"/g, '\u201D')
+      .replace(/(^|[\s([{\u2013\u2014-])'/g, '$1\u2018').replace(/'/g, '\u2019');
+  }
+
+  // Sheet text ending in a full stop, e.g. "Created by A, B, and C ." -> "Created by A, B, and C."
+  function sentence(text) {
+    return smartQuotes(text.replace(/\s*\.?$/, '.'));
+  }
+
   // A cell is only made a link if the whole value is an http(s) URL.
   function renderText(value) {
     const url = safeUrl(value);
-    return url ? h('a', { href: url }, value) : value;
+    return url ? h('a', { href: url }, value) : smartQuotes(value);
   }
 
   function renderValue(value, col) {
@@ -262,13 +274,13 @@
   function buildIntro(data) {
     const [criteriaLabel, criteriaText] = splitLabel(data.criteria, 'Inclusion criteria');
     return h('section', { id: 'about', class: 'intro', 'aria-labelledby': 'page-title' },
-      h('h1', { id: 'page-title' }, data.title),
+      h('h1', { id: 'page-title' }, smartQuotes(data.title)),
       h('p', { class: 'lead' }, LEAD),
       h('div', { class: 'intro-grid' },
         h('div', { class: 'intro-col' },
           h('h2', null, 'About this list'),
-          data.credit && h('p', null, data.credit.replace(/\s*\.?$/, '.')),
-          data.lastUpdate && h('p', null, data.lastUpdate.replace(/\s*\.?$/, '.')),
+          data.credit && h('p', null, sentence(data.credit)),
+          data.lastUpdate && h('p', null, sentence(data.lastUpdate)),
           h('h2', null, 'About this website'),
           h('p', null, 'This website was built by ',
             h('a', { href: CONFIG.websiteAuthor.url }, CONFIG.websiteAuthor.name),
@@ -279,11 +291,11 @@
             h('li', null, h('a', { href: CONFIG.csvUrl }, 'CSV export of the live sheet')),
             h('li', null, h('a', { href: './data/journals.json' }, 'JSON snapshot used by this site')))),
         h('div', { class: 'intro-col' },
-          criteriaText && h('h2', null, criteriaLabel),
-          criteriaText && h('p', null, criteriaText),
-          data.notes.map((note) => h('p', null, note)),
+          criteriaText && h('h2', null, smartQuotes(criteriaLabel)),
+          criteriaText && h('p', null, smartQuotes(criteriaText)),
+          data.notes.map((note) => h('p', null, smartQuotes(note))),
           h('h2', null, 'Suggest a journal or report an error'),
-          data.contribute && h('p', null, data.contribute.replace(/\s*\.?$/, '.')),
+          data.contribute && h('p', null, sentence(data.contribute)),
           h('p', null, h('a', { href: CONFIG.sheetUrl }, 'Open the #opencomm Google Sheet')))));
   }
 
@@ -311,8 +323,8 @@
       return [
         h('tr', { id: j.id, class: 'journal' },
           h('th', { scope: 'row', class: 'col-name' },
-            h('span', { class: 'journal-name' }, name),
-            subtitle && h('span', { class: 'publisher' }, subtitle),
+            h('span', { class: 'journal-name' }, smartQuotes(name)),
+            subtitle && h('span', { class: 'publisher' }, smartQuotes(subtitle)),
             h('span', { class: 'row-actions' },
               h('button', { type: 'button', class: 'toggle', 'aria-expanded': String(open), 'aria-controls': j.id + '-details', 'data-toggle': j.id },
                 open ? 'Hide details' : 'Details'),
@@ -360,12 +372,14 @@
       buildIntro(data),
       h('section', { id: 'journals', class: 'journals', 'aria-labelledby': 'journals-title' },
         h('h2', { id: 'journals-title' }, 'Journals'),
-        h('p', { class: 'legend' },
-          h('span', { class: 'mark yes' }, h('span', { class: 'dot', 'aria-hidden': 'true' }), 'Yes'),
-          ' = offered or indexed. ',
-          h('span', { class: 'mark no' }, '–'),
-          ' = no. An amount under “APC free” is the fee charged. ' +
-          'Select “Details” for licence, scope, first issue, society support and notes on fees.'),
+        h('div', { class: 'legend' },
+          h('p', null,
+            h('span', { class: 'mark yes' }, h('span', { class: 'dot', 'aria-hidden': 'true' }), 'Yes'),
+            ' = offered or indexed. ',
+            h('span', { class: 'mark no' }, '–'),
+            ' = no.'),
+          h('p', null, 'An amount under “APC free” is the fee charged.'),
+          h('p', null, 'Select “Details” for licence, scope, first issue, society support and notes on fees.')),
         h('div', { id: 'controls', class: 'controls', hidden: true }),
         h('div', { class: 'status-bar' },
           h('p', { id: 'result-count', class: 'result-count', role: 'status' }, countText(model.journals.length, model.journals.length)),
@@ -410,18 +424,10 @@
     const sortValue = state.sort ? state.sort.col + '|' + state.sort.dir : '';
     const flagGroups = model.groups.filter((g) => g.columns.some((c) => c.kind === 'flag'));
     return [
-      h('div', { class: 'control-search' },
-        h('label', { for: 'search' }, 'Search'),
-        h('input', { id: 'search', type: 'search', value: state.query, autocomplete: 'off', placeholder: 'Journal, publisher, ISSN, licence, notes…' })),
-      h('fieldset', { class: 'filters' },
-        h('legend', null, 'Show only journals with'),
-        flagGroups.map((g) => h('div', { class: 'filter-group' },
-          h('p', { class: 'filter-group-label' }, g.label),
-          g.columns.filter((c) => c.kind === 'flag').map((c) =>
-            h('label', { class: 'check' },
-              h('input', { type: 'checkbox', 'data-filter-flag': c.name, checked: state.flags.has(c.name) }),
-              ' ', c.label))))),
       h('div', { class: 'control-row' },
+        h('div', { class: 'control-search' },
+          h('label', { for: 'search' }, 'Search'),
+          h('input', { id: 'search', type: 'search', value: state.query, autocomplete: 'off', placeholder: 'Journal, publisher, ISSN, licence, notes…' })),
         model.categoryCols.map((c) => h('label', { class: 'select' }, c.name,
           h('select', { 'data-filter-category': c.name },
             h('option', { value: '' }, 'All'),
@@ -434,6 +440,14 @@
               ? [h('option', { value: c.name + '|1', selected: sortValue === c.name + '|1' }, c.name + ' (A–Z)')]
               : [h('option', { value: c.name + '|-1', selected: sortValue === c.name + '|-1' }, c.name + ' (high to low)')]))),
         h('button', { type: 'button', class: 'button', 'data-action': 'clear' }, 'Clear all')),
+      h('fieldset', { class: 'filters' },
+        h('legend', null, 'Show only journals with'),
+        flagGroups.map((g) => h('div', { class: 'filter-group' },
+          h('p', { class: 'filter-group-label' }, g.label),
+          g.columns.filter((c) => c.kind === 'flag').map((c) =>
+            h('label', { class: 'check' },
+              h('input', { type: 'checkbox', 'data-filter-flag': c.name, checked: state.flags.has(c.name) }),
+              ' ', c.label))))),
     ];
   }
 
