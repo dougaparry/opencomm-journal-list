@@ -143,7 +143,6 @@ a:hover {
 }
 
 .legend {
-  max-width: 90ch;
   margin: 0 0 1.5rem;
 }
 
@@ -549,7 +548,7 @@ html:not(.js) .journal-table tr.journal > *,
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .intro-criteria {
+  .intro-col + .intro-col {
     padding-top: 1rem;
     border-top: 1px solid var(--black);
   }
