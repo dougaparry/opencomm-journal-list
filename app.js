@@ -261,7 +261,7 @@
   function renderValue(value, col) {
     const flag = col.kind === 'flag' ? flagValue(value) : null;
     if (flag === true) return h('span', { class: 'mark yes' }, h('span', { class: 'dot', 'aria-hidden': 'true' }), 'Yes');
-    if (flag === false) return h('span', { class: 'mark no' }, h('span', { 'aria-hidden': 'true' }, '–'), h('span', { class: 'sr-only' }, 'No'));
+    if (flag === false) return h('span', { class: 'mark no' }, h('span', { class: 'dot', 'aria-hidden': 'true' }), 'No');
     return renderText(value);
   }
 
@@ -376,8 +376,8 @@
           h('p', null,
             h('span', { class: 'mark yes' }, h('span', { class: 'dot', 'aria-hidden': 'true' }), 'Yes'),
             ' = offered or indexed. ',
-            h('span', { class: 'mark no' }, '–'),
-            ' = no.'),
+            h('span', { class: 'mark no' }, h('span', { class: 'dot', 'aria-hidden': 'true' }), 'No'),
+            ' = not offered or not indexed.'),
           h('p', null, 'An amount under “APC free” is the fee charged.'),
           h('p', null, 'Select “Details” for licence, scope, first issue, society support and notes on fees.')),
         h('div', { id: 'controls', class: 'controls', hidden: true }),

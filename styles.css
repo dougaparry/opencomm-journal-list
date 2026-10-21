@@ -169,6 +169,10 @@ a:hover {
   background: var(--ica-green);
 }
 
+.mark.no .dot {
+  background: var(--ica-red);
+}
+
 /* Controls ---------------------------------------------------------------- */
 
 .controls {
