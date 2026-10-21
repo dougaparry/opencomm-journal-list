@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://USERNAME.github.io/opencomm-journal-list/sitemap.xml
+Sitemap: https://dougaparry.github.io/opencomm-journal-list/sitemap.xml

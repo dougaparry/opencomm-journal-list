@@ -2,7 +2,9 @@
 
 A read-only website for the **Open Media and Communication Research (#opencomm) Journal List**: peer-reviewed journals in media and communication research that support open science (open access, APC-free publishing, registered reports, open peer review, open data, and more).
 
-The list is created by Moritz Büchi, Michael Reiss, and Tobias Dienlin, and maintained in a [Google Sheet](https://docs.google.com/spreadsheets/d/1WDTBIop2Eg9CKsvQ1BUgMXJdmrh1TAreyS02SiWEJDY/edit?gid=0). This site always reflects the sheet. To suggest a journal or report outdated information, comment on the sheet or request edit access there.
+The list is created by Moritz Büchi, Michael Reiss, and Tobias Dienlin, and maintained in a [Google Sheet](https://docs.google.com/spreadsheets/d/1WDTBIop2Eg9CKsvQ1BUgMXJdmrh1TAreyS02SiWEJDY/edit?gid=0). This site always reflects the sheet.
+
+The website is built by [Douglas Parry](https://github.com/dougaparry) as an independent project and is not directly affiliated with the list's authors. To suggest a journal or report outdated information, comment on the sheet or request edit access there.
 
 ## How it works
 
@@ -55,6 +57,6 @@ Then visit http://localhost:8000.
 2. In the repository settings, under **Pages**, set **Source** to **GitHub Actions**.
 3. The workflow deploys on every push to `main`, daily, and when run manually from the **Actions** tab.
 
-The committed files use `https://USERNAME.github.io/opencomm-journal-list/` as a placeholder site URL (canonical link, social preview tags, structured data, `robots.txt`, `sitemap.xml`). The workflow replaces it with the real GitHub Pages URL when it deploys. If you use a custom domain, it is picked up the same way.
+The site is published at https://dougaparry.github.io/opencomm-journal-list/. That URL is used for the canonical link, social preview tags, structured data, `robots.txt` and `sitemap.xml`; if the address changes (e.g. a custom domain), update it in those files and in `SITE_URL` in `scripts/fetch-sheet.mjs`.
 
 GitHub pauses scheduled workflows in repositories with no activity for 60 days. If that happens, re-enable the workflow in the **Actions** tab; the live refresh in the browser keeps the list current in the meantime.

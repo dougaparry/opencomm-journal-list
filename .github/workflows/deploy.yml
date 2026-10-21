@@ -28,15 +28,12 @@ jobs:
         with:
           node-version: 22
 
-      - id: pages
-        uses: actions/configure-pages@v5
+      - uses: actions/configure-pages@v5
 
       # If the sheet cannot be fetched, the committed snapshot is deployed instead.
       - name: Fetch the sheet and regenerate the snapshot
         run: node scripts/fetch-sheet.mjs
         continue-on-error: true
-        env:
-          SITE_URL: ${{ steps.pages.outputs.base_url }}
 
       - name: Collect site files
         run: |

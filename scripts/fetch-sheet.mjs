@@ -2,8 +2,6 @@
 //   - data/journals.json
 //   - the pre-rendered list and JSON-LD in index.html
 //   - <lastmod> in sitemap.xml
-// If SITE_URL is set (the GitHub Action passes the Pages URL), the placeholder site URL in
-// index.html, robots.txt and sitemap.xml is replaced with it.
 //
 // Usage: node scripts/fetch-sheet.mjs   (Node 18+, no dependencies)
 
@@ -14,7 +12,7 @@ const require = createRequire(import.meta.url);
 const { CONFIG, LEAD, parseCSV, parseSheet, buildMain, toHTML } = require('../app.js');
 
 const ROOT = new URL('../', import.meta.url);
-const PLACEHOLDER_URL = 'https://USERNAME.github.io/opencomm-journal-list/';
+const SITE_URL = 'https://dougaparry.github.io/opencomm-journal-list/';
 
 const file = (name) => new URL(name, ROOT);
 
@@ -38,7 +36,7 @@ function jsonLd(data) {
     '@type': 'Dataset',
     name: data.title,
     description: `${LEAD} ${data.criteria}`,
-    url: PLACEHOLDER_URL,
+    url: SITE_URL,
     isBasedOn: CONFIG.sheetUrl,
     creator: creators,
     keywords: ['open science', 'open access', 'communication research', 'media studies', 'academic journals',
@@ -47,7 +45,7 @@ function jsonLd(data) {
     dateModified: data.fetchedAt,
     distribution: [
       { '@type': 'DataDownload', encodingFormat: 'text/csv', contentUrl: CONFIG.csvUrl },
-      { '@type': 'DataDownload', encodingFormat: 'application/json', contentUrl: PLACEHOLDER_URL + 'data/journals.json' },
+      { '@type': 'DataDownload', encodingFormat: 'application/json', contentUrl: SITE_URL + 'data/journals.json' },
     ],
   };
 }
@@ -75,21 +73,9 @@ async function updateSnapshot() {
   console.log(`Snapshot updated: ${data.rows.length} journals, ${data.columns.length} columns.`);
 }
 
-async function applySiteUrl(siteUrl) {
-  const base = siteUrl.replace(/\/?$/, '/');
-  for (const name of ['index.html', 'robots.txt', 'sitemap.xml']) {
-    const text = await readFile(file(name), 'utf8');
-    await writeFile(file(name), text.split(PLACEHOLDER_URL).join(base));
-  }
-  console.log(`Site URL set to ${base}`);
-}
-
 try {
   await updateSnapshot();
 } catch (error) {
   console.error(`Could not update the snapshot: ${error.message}`);
   process.exitCode = 1;
 }
-// Apply the site URL even if the sheet could not be fetched, so a deploy of the
-// previous snapshot still has correct canonical and sitemap URLs.
-if (process.env.SITE_URL) await applySiteUrl(process.env.SITE_URL);

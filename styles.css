@@ -90,14 +90,13 @@ a:hover {
 /* Intro ------------------------------------------------------------------ */
 
 .intro h1 {
-  max-width: 24ch;
   margin: 3.5rem 0 1rem;
-  font-size: clamp(2rem, 4.5vw, 3rem);
+  /* Sized so the full title fits on one line on desktop and tablet screens. */
+  font-size: clamp(1.75rem, calc(3vw - 0.25rem), 2.375rem);
   line-height: 1.1;
 }
 
 .lead {
-  max-width: 62ch;
   margin: 0 0 2.5rem;
   font-size: 1.25rem;
   line-height: 1.45;
@@ -105,7 +104,7 @@ a:hover {
 
 .intro-grid {
   display: grid;
-  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 1rem 4rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--black);
@@ -121,7 +120,6 @@ a:hover {
 }
 
 .intro p {
-  max-width: 68ch;
   margin: 0 0 0.75rem;
 }
 
@@ -510,7 +508,6 @@ html:not(.js) .journal-table tr.journal > *,
 }
 
 .site-footer p {
-  max-width: 80ch;
   margin: 0;
 }
 
@@ -552,7 +549,7 @@ html:not(.js) .journal-table tr.journal > *,
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .intro-side {
+  .intro-criteria {
     padding-top: 1rem;
     border-top: 1px solid var(--black);
   }

@@ -21,6 +21,7 @@
     fetchTimeoutMs: 15000,
     // Columns the sheet maintainers use for bookkeeping; not shown on the site.
     hiddenColumns: ['checked'],
+    websiteAuthor: { name: 'Douglas Parry', url: 'https://github.com/dougaparry' },
   };
   CONFIG.sheetUrl = `https://docs.google.com/spreadsheets/d/${CONFIG.sheetId}/edit?gid=${CONFIG.gid}`;
   // The export endpoint keeps the sheet's layout (context rows, then the header row).
@@ -264,21 +265,26 @@
       h('h1', { id: 'page-title' }, data.title),
       h('p', { class: 'lead' }, LEAD),
       h('div', { class: 'intro-grid' },
-        h('div', { class: 'intro-main' },
-          criteriaText && h('h2', null, criteriaLabel),
-          criteriaText && h('p', null, criteriaText),
-          data.notes.map((note) => h('p', null, note))),
-        h('div', { class: 'intro-side' },
+        h('div', { class: 'intro-about' },
           h('h2', null, 'About this list'),
           data.credit && h('p', null, data.credit.replace(/\s*\.?$/, '.')),
           data.lastUpdate && h('p', null, data.lastUpdate.replace(/\s*\.?$/, '.')),
+          h('h2', null, 'About this website'),
+          h('p', null, 'This website was built by ',
+            h('a', { href: CONFIG.websiteAuthor.url }, CONFIG.websiteAuthor.name),
+            '. It pulls its data directly from the #opencomm Google Sheet, which is created and maintained by the list’s authors. ' +
+            'The website is an independent project and is not directly affiliated with them.'),
           h('h2', null, 'Suggest a journal or report an error'),
           data.contribute && h('p', null, data.contribute.replace(/\s*\.?$/, '.')),
           h('p', null, h('a', { href: CONFIG.sheetUrl }, 'Open the #opencomm Google Sheet')),
           h('h2', null, 'Download the data'),
           h('ul', { class: 'plain-list' },
             h('li', null, h('a', { href: CONFIG.csvUrl }, 'CSV export of the live sheet')),
-            h('li', null, h('a', { href: './data/journals.json' }, 'JSON snapshot used by this site'))))));
+            h('li', null, h('a', { href: './data/journals.json' }, 'JSON snapshot used by this site')))),
+        h('div', { class: 'intro-criteria' },
+          criteriaText && h('h2', null, criteriaLabel),
+          criteriaText && h('p', null, criteriaText),
+          data.notes.map((note) => h('p', null, note)))));
   }
 
   function sortDirection(state, col) {
